@@ -1,0 +1,1 @@
+aws cognito-idp initiate-auth --client-id ${clientId} --auth-flow USER_PASSWORD_AUTH --auth-parameters USERNAME=${username},PASSWORD=${pass}
