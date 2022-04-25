@@ -4,7 +4,7 @@ import uuid
 client = boto3.resource('dynamodb')
 
 def lambda_handler(event, context):
-    movieId = srt(uuid.uuid4())
+    movieId = uuid.uuid4().hex
     event['movieId'] = movieId
     
     table = client.Table("movies")
