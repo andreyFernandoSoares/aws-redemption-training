@@ -7,7 +7,7 @@ def lambda_handler(event, context):
     movieId = uuid.uuid4().hex
     event['movieId'] = movieId
     
-    table = client.Table("movies")
+    table = client.Table("movie")
     table.put_item(Item=event)
     
     return {
