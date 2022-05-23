@@ -5,8 +5,9 @@ client = boto3.resource('dynamodb')
 def lambda_handler(event, context):
     userId = event['pathParameters']['userid']
     table = client.Table("movie")
-    response = table.get_item(TableName="movie", Key={'userId': userId})
+    response = table.scan()
+    data = response['Items']
     return {
         "status": 200,
-        "mensagem": response
+        "mensagem": data
     }
